@@ -13,7 +13,7 @@ import net.sf.json.JSONObject;
 
 
 /**
- * 测试类不用管
+ * 用户相关controller
  */
 @RestController
 @RequestMapping("Api/user/")
