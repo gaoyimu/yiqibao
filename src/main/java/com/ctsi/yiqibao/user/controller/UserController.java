@@ -18,7 +18,7 @@ import net.sf.json.JSONObject;
 @RestController
 @RequestMapping("Api/user/")
 public class UserController {
-    private final static Logger logger = LoggerFactory.getLogger(UserController.class);
+    //private final static Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
     @Autowired
@@ -29,13 +29,13 @@ public class UserController {
      */
     @GetMapping("get_weixin_sns_info")
     public JSONObject getUser(@RequestParam String code){
-        logger.info("===========================进入get_weixin_sns_info，传入参数为："+code+"============================");
+        //logger.info("===========================进入get_weixin_sns_info，传入参数为："+code+"============================");
         String path = "https://api.weixin.qq.com/sns/jscode2session?appid="+env.getProperty("wx_appid")+"&secret="+env.getProperty("wx_secret")+"&js_code="+code+"&grant_type=authorization_code";
         Object o = HttpUrlConnectionUtil.opentConnection(path);
         JSONObject  myJson = JSONObject.fromObject(o.toString());
         /*JSONObject openIdJson = new JSONObject();
         openIdJson.put("openid",myJson.get("openid"));*/
-        logger.info("=============================访问结束，返回值为："+myJson+"======================================");
+        //logger.info("=============================访问结束，返回值为："+myJson+"======================================");
         return myJson;
     }
 
