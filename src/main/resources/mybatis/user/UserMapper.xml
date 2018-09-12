@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ctsi.yiqibao.user.mapper.UserMapper">
+    <!--<resultMap id="userMap" type="com.ctsi.yiqibao.user.pojo.User">
+        <result property="open_id" column="open_id"/>
+        <result property="gender" column="gender"/>
+        <result property="nick_name" column="nick_name"/>
+        <result property="image_url" column="image_url" />
+        <result property="country" column="country" />
+        <result property="province" column="province" />
+        <result property="city" column="city" />
+        <result property="language" column="language"/>
+    </resultMap>-->
+    <!-- 根据openId查询用户信息 -->
+    <select id="getUser" resultType="com.ctsi.yiqibao.user.pojo.User" parameterType="string">
+        select * from yqb_user where open_id = #{openId}
+    </select>
+    <!-- 新增用户信息 -->
+    <insert id="insertUser" parameterType="com.ctsi.yiqibao.user.pojo.User">
+        insert into
+          yqb_user(open_id,gender,nick_name,image_url,country,province,city,language,qx,add_time,login_time,qx_time,status)
+        values(#{open_id},#{gender},#{nick_name},#{image_url},#{country},#{province},#{city},#{language},9,#{nowTime},#{nowTime},#{nowTime},0)
+    </insert>
+    <!-- 根据openId修改用户信息 -->
+    <update id="updateUserByOpenId" parameterType="com.ctsi.yiqibao.user.pojo.User">
+      update
+        yqb_user
+      set
+          gender = #{gender},
+          nick_name = #{nick_name},
+          image_url = #{image_url},
+          country = #{country},
+          province = #{province},
+          city = #{city},
+          language = #{language},
+          login_time = NOW()
+        where
+          open_id = #{open_id}
+    </update>
+</mapper>
