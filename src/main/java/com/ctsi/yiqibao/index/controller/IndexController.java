@@ -2,7 +2,9 @@ package com.ctsi.yiqibao.index.controller;
 
 import com.ctsi.yiqibao.index.pojo.ImageLocation;
 import com.ctsi.yiqibao.index.service.IndexService;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +23,11 @@ public class IndexController {
      * 查询轮播图集合
      * @return
      */
-    @RequestMapping("getLbt")
-    public List<ImageLocation> getLbt(){
-        return indexService.getLbt();
+    @GetMapping("getLbt")
+    public JSONObject getLbt(){
+        JSONObject resultJson = new JSONObject();
+        resultJson.put("status",1);
+        resultJson.put("lbt_list",indexService.getLbt());
+        return resultJson;
     }
 }
