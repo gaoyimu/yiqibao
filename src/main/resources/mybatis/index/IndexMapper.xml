@@ -14,4 +14,17 @@
          order by
           sort
     </select>
+    <!-- 分类图展示查询 -->
+    <select id="getFlt" resultType="com.ctsi.yiqibao.index.pojo.ImageLocation">
+        select * from
+          yqb_image_location
+        where
+          is_online = 1
+         and
+          is_del = 0
+         and
+          image_type = "flt"
+         order by
+          sort
+    </select>
 </mapper>

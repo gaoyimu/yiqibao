@@ -30,4 +30,16 @@ public class IndexController {
         resultJson.put("lbt_list",indexService.getLbt());
         return resultJson;
     }
+    /**
+     * 查询轮播图集合
+     * @return
+     */
+    @GetMapping("getFlt")
+    public JSONObject getFlt(){
+        JSONObject resultJson = new JSONObject();
+        resultJson.put("status",1);
+        resultJson.put("flt_list",indexService.getFlt());
+        return resultJson;
+    }
+
 }

@@ -15,4 +15,9 @@ public class IndexServiceImpl implements IndexService {
     public List getLbt() {
         return indexMapper.getLbt();
     }
+
+    @Override
+    public List getFlt() {
+        return indexMapper.getFlt();
+    }
 }

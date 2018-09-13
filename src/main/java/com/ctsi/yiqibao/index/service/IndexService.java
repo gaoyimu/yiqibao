@@ -8,4 +8,9 @@ public interface IndexService {
      * @return
      */
     List getLbt();
+    /**
+     * 查询分类图集合
+     * @return
+     */
+    List getFlt();
 }
