@@ -73,6 +73,5 @@ public class UserController {
         resultJson.put("user_info",user);
         resultJson.put("access_token",JSONObject.fromObject(o.toString()).get("access_token"));
         return resultJson;
-
     }
 }
