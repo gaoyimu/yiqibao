@@ -23,5 +23,4 @@ public class User {
     private String iv;
     private String signature;
     private Date nowTime = new Date();
-
 }
