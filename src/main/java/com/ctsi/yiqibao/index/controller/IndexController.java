@@ -31,7 +31,7 @@ public class IndexController {
         return resultJson;
     }
     /**
-     * 查询轮播图集合
+     * 查询分类图集合
      * @return
      */
     @GetMapping("getFlt")
