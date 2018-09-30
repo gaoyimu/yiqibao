@@ -29,4 +29,8 @@ public class ImageLocation {
     private String image_type;
     private Date create_date;
     private Date update_date;
+    /**
+     * 是否为手机端 1，是 0否
+     */
+    private Integer is_mobile;
 }
