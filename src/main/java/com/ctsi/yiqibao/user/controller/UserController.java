@@ -3,12 +3,13 @@ package com.ctsi.yiqibao.user.controller;
 import com.ctsi.yiqibao.user.pojo.User;
 import com.ctsi.yiqibao.user.service.UserService;
 import com.ctsi.yiqibao.util.HttpUrlConnectionUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.*;
-import net.sf.json.JSONObject;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 
